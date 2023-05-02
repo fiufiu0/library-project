@@ -28,5 +28,15 @@ header .container {
 }
 
 .main-name {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+}
+
+.add-btn {
+    text-decoration: none;
+    color: #fff;
+    background-color: #929aab;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    outline: none;
+    border-radius: 3px;
 }
