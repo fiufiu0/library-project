@@ -34,8 +34,14 @@ const createBook = (book) => {
   read.classList.add('booksRead');
 
   title.textContent = `${book.title}`;
+  author.textContent = `${book.author}`;
+  pages.textContent = book.pages;
+  read.textContent = book.read;
 
   booksCard.appendChild(title);
+  booksCard.appendChild(author);
+  booksCard.appendChild(pages);
+  booksCard.appendChild(read);
   books.appendChild(booksCard);
 
   console.log(books)
