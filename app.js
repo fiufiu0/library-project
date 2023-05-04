@@ -10,9 +10,9 @@ function Book(title, author, pages, read) {
 }
 
 
-let book1 = new Book("Hobbit", "Tolkien", 125, false);
-let book2 = new Book("Potter", "JK Rowling", 521, true);
-let book3 = new Book("Hobbit 2", "Tolkien", 333, true);
+let book1 = new Book("The Hobbit", "J. R. R. Tolkien", 125, false);
+let book2 = new Book("Harry Potter", "JK Rowling", 521, true);
+let book3 = new Book("LOTR: Two Towers", "J. R. R. Tolkien", 333, true);
 
 // const addBookToLibrary = () => {
 
@@ -35,7 +35,7 @@ const createBook = (book) => {
 
   title.textContent = `${book.title}`;
   author.textContent = `${book.author}`;
-  pages.textContent = book.pages;
+  pages.textContent = `Pages: ${book.pages}`;
   read.textContent = book.read;
 
   booksCard.appendChild(title);
@@ -49,3 +49,5 @@ const createBook = (book) => {
 }
 
 createBook(book1);
+createBook(book2);
+createBook(book3);

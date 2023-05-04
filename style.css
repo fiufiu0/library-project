@@ -64,3 +64,35 @@ main .container {
     margin-top: 2rem;
 }
 
+/* - MAIN / BOOKS - */
+
+.books {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.booksCard {
+    /* background-color: #393e46; */
+    background-color: #929aab;
+    padding: 2rem;
+    border-radius: 10px;
+    flex: 1;
+}
+
+.booksTitle {
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding-bottom: 0.5rem;
+}
+
+.booksAuthor {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.booksPages {
+    font-size: 0.9rem;
+    font-weight: 300;
+}
