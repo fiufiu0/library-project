@@ -87,7 +87,7 @@ main .container {
 .booksTitle {
     font-size: 1.2rem;
     font-weight: 500;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.8rem;
 }
 
 .booksAuthor {
@@ -99,3 +99,28 @@ main .container {
     font-size: 0.9rem;
     font-weight: 300;
 }
+
+
+/* MODAL START */
+
+.modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    /* display: none; */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 1rem;
+    border: 1px solid #888;
+    width: 50%;
+    /* display: none; */
+}
+
+/* MODAL END */
