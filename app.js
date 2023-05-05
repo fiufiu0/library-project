@@ -1,6 +1,7 @@
 const books = document.getElementById('books');
 const addBook = document.getElementById('add-btn');
 const modal = document.getElementById('modal');
+const modalContent = document.getElementById('modal-content');
 
 let booksArray = [];
 
@@ -20,7 +21,13 @@ let book3 = new Book("LOTR: Two Towers", "J. R. R. Tolkien", 333, true);
 
 // }
 
+const openModal = (e) => {
+  modal.classList.remove('hidden');
+  modalContent.classList.remove('hidden');
+  e.preventDefault();
+}
 
+addBook.addEventListener('click', openModal)
 
 const createBook = (book) => {
  
