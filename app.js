@@ -21,12 +21,6 @@ let book3 = new Book("LOTR: Two Towers", "J. R. R. Tolkien", 333, true);
 // }
 
 
-const addBookModal = () => {
-  modal.style.display = "none";
-}
-
-
-addBook.onclick = addBookModal();
 
 const createBook = (book) => {
  
