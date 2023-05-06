@@ -121,6 +121,12 @@ main .container {
     width: 50%;
 }
 
+.modal-close {
+    text-decoration: none;
+    background-color: #888;
+    padding: 1rem;
+}
+
 .hidden {
     display: none;
 }

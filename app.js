@@ -2,6 +2,7 @@ const books = document.getElementById('books');
 const addBook = document.getElementById('add-btn');
 const modal = document.getElementById('modal');
 const modalContent = document.getElementById('modal-content');
+const modalClose = document.getElementById('modal-close');
 
 let booksArray = [];
 
@@ -27,7 +28,15 @@ const openModal = (e) => {
   e.preventDefault();
 }
 
-addBook.addEventListener('click', openModal)
+const closeModal = (e) => {
+  modal.classList.add('hidden');
+  modalContent.classList.add('hidden');
+  e.preventDefault();
+}
+
+addBook.onclick = openModal;
+modalClose.onclick = closeModal;
+
 
 const createBook = (book) => {
  
