@@ -1,8 +1,8 @@
-const books = document.getElementById('books');
-const addBook = document.getElementById('add-btn');
-const modal = document.getElementById('modal');
-const modalContent = document.getElementById('modal-content');
-const modalClose = document.getElementById('modal-close');
+const books = document.getElementById("books");
+const addBook = document.getElementById("add-btn");
+const modal = document.getElementById("modal");
+const modalContent = document.getElementById("modal-content");
+const modalClose = document.getElementById("modal-close");
 
 let booksArray = [];
 
@@ -13,7 +13,6 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
-
 let book1 = new Book("The Hobbit", "J. R. R. Tolkien", 125, false);
 let book2 = new Book("Harry Potter", "JK Rowling", 521, true);
 let book3 = new Book("LOTR: Two Towers", "J. R. R. Tolkien", 333, true);
@@ -23,34 +22,32 @@ let book3 = new Book("LOTR: Two Towers", "J. R. R. Tolkien", 333, true);
 // }
 
 const openModal = (e) => {
-  modal.classList.remove('hidden');
-  modalContent.classList.remove('hidden');
+  modal.classList.remove("hidden");
+  modalContent.classList.remove("hidden");
   e.preventDefault();
-}
+};
 
-const closeModal = (e) => {
-  modal.classList.add('hidden');
-  modalContent.classList.add('hidden');
-  e.preventDefault();
-}
+// const closeModal = (e) => {
+//   modal.classList.add('hidden');
+//   modalContent.classList.add('hidden');
+//   e.preventDefault();
+// }
 
 addBook.onclick = openModal;
-modalClose.onclick = closeModal;
-
+// modalClose.onclick = closeModal;
 
 const createBook = (book) => {
- 
-  const booksCard = document.createElement('div');
-  const title = document.createElement('p');
-  const author = document.createElement('p');
-  const pages = document.createElement('p');
-  const read = document.createElement('p');
+  const booksCard = document.createElement("div");
+  const title = document.createElement("p");
+  const author = document.createElement("p");
+  const pages = document.createElement("p");
+  const read = document.createElement("p");
 
-  booksCard.classList.add('booksCard');
-  title.classList.add('booksTitle');
-  author.classList.add('booksAuthor');
-  pages.classList.add('booksPages');
-  read.classList.add('booksRead');
+  booksCard.classList.add("booksCard");
+  title.classList.add("booksTitle");
+  author.classList.add("booksAuthor");
+  pages.classList.add("booksPages");
+  read.classList.add("booksRead");
 
   title.textContent = `${book.title}`;
   author.textContent = `${book.author}`;
@@ -63,13 +60,13 @@ const createBook = (book) => {
   booksCard.appendChild(read);
   books.appendChild(booksCard);
 
-  console.log(books)
-  console.log(book)
-}
+  console.log(books);
+  console.log(book);
+};
 
 createBook(book1);
 createBook(book2);
 createBook(book3);
 createBook(book1);
 createBook(book2);
-createBook(book3)
+createBook(book3);
