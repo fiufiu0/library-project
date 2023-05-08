@@ -1,8 +1,7 @@
 const books = document.getElementById("books");
 const addBook = document.getElementById("add-btn");
-const modal = document.getElementById("modal");
+const modalBackground = document.getElementById("modal-background");
 const modalContent = document.getElementById("modal-content");
-const modalClose = document.getElementById("modal-close");
 
 let booksArray = [];
 
@@ -22,19 +21,19 @@ let book3 = new Book("LOTR: Two Towers", "J. R. R. Tolkien", 333, true);
 // }
 
 const openModal = (e) => {
-  modal.classList.remove("hidden");
+  modalBackground.classList.remove("hidden");
   modalContent.classList.remove("hidden");
   e.preventDefault();
 };
 
-// const closeModal = (e) => {
-//   modal.classList.add('hidden');
-//   modalContent.classList.add('hidden');
-//   e.preventDefault();
-// }
+const closeModal = (e) => {
+  modalBackground.classList.add('hidden');
+  modalContent.classList.add('hidden');
+  e.preventDefault();
+}
 
 addBook.onclick = openModal;
-// modalClose.onclick = closeModal;
+modalBackground.onclick = closeModal;
 
 const createBook = (book) => {
   const booksCard = document.createElement("div");
