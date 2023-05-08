@@ -103,7 +103,7 @@ main .container {
 
 /* MODAL START */
 
-.modal {
+.modal-background {
     position: fixed;
     z-index: 1;
     left: 0;
@@ -114,10 +114,13 @@ main .container {
 }
 
 .modal-content {
+    position: fixed;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: #eee;
-    margin: 10% auto; /* 15% from the top and centered */
     padding: 1rem;
-    /* border: 1px solid #888; */
     border-radius: 10px;
     width: 500px;
 }
