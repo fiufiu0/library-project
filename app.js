@@ -16,10 +16,6 @@ let book1 = new Book("The Hobbit", "J. R. R. Tolkien", 125, false);
 let book2 = new Book("Harry Potter", "JK Rowling", 521, true);
 let book3 = new Book("LOTR: Two Towers", "J. R. R. Tolkien", 333, true);
 
-// const addBookToLibrary = () => {
-
-// }
-
 const openModal = (e) => {
   modalBackground.classList.remove("hidden");
   modalContent.classList.remove("hidden");
@@ -59,9 +55,28 @@ const createBook = (book) => {
   booksCard.appendChild(read);
   books.appendChild(booksCard);
 
-  console.log(books);
-  console.log(book);
+  // console.log(books);
+  // console.log(book);
 };
+
+
+const getInputValue = () => {
+  const title = document.getElementById("title").value
+  const author = document.getElementById("author").value
+  const pages = document.getElementById("pages").value
+  const read = document.getElementById("read").checked
+  console.log(title,author,pages)
+  return new Book(title, author, pages, read)
+}
+
+
+const saveBook = (e) => {
+  const submit = document.getElementById("submit");
+  console.log(e)
+  submit.onclick = getInputValue;
+}
+
+saveBook();
 
 createBook(book1);
 createBook(book2);
