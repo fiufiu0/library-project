@@ -17,16 +17,14 @@ let book1 = new Book("The Hobbit", "J. R. R. Tolkien", 125, false);
 let book2 = new Book("Harry Potter", "JK Rowling", 521, true);
 let book3 = new Book("LOTR: Two Towers", "J. R. R. Tolkien", 333, true);
 
-const openModal = (e) => {
+const openModal = () => {
   modalBackground.classList.remove("hidden");
   modalContent.classList.remove("hidden");
-  e.preventDefault();
 };
 
-const closeModal = (e) => {
+const closeModal = () => {
   modalBackground.classList.add('hidden');
   modalContent.classList.add('hidden');
-  e.preventDefault();
 }
 
 const resetForm = () => {
@@ -71,12 +69,12 @@ const getInputValue = (e) => {
   const author = document.getElementById("author").value
   const pages = document.getElementById("pages").value
   const read = document.getElementById("read").checked
-  console.log(title,author,pages)
+
   const newBook = new Book(title, author, pages, read);
   booksArray.push(newBook);
   e.preventDefault();
   console.log(booksArray)
-  closeModal(e);
+  closeModal();
   resetForm();
 }
 

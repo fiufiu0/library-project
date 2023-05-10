@@ -40,6 +40,7 @@ header .container {
     background-color: #929aab;
     font-size: 1.1rem;
     padding: 0.5rem 1.1rem;
+    border: none;
     outline: none;
     border-radius: 3px;
     transition: all 0.1s ease-in;
