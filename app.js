@@ -29,6 +29,13 @@ const closeModal = (e) => {
   e.preventDefault();
 }
 
+const resetForm = () => {
+  title.value = '';
+  author.value = '';
+  pages.value = '';
+  read.checked = false;
+}
+
 addBook.onclick = openModal;
 modalBackground.onclick = closeModal;
 
