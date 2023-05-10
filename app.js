@@ -2,6 +2,7 @@ const books = document.getElementById("books");
 const addBook = document.getElementById("add-btn");
 const modalBackground = document.getElementById("modal-background");
 const modalContent = document.getElementById("modal-content");
+const submit = document.getElementById("submit");
 
 let booksArray = [];
 
@@ -55,28 +56,24 @@ const createBook = (book) => {
   booksCard.appendChild(read);
   books.appendChild(booksCard);
 
-  // console.log(books);
-  // console.log(book);
 };
 
 
-const getInputValue = () => {
+const getInputValue = (e) => {
   const title = document.getElementById("title").value
   const author = document.getElementById("author").value
   const pages = document.getElementById("pages").value
   const read = document.getElementById("read").checked
   console.log(title,author,pages)
-  return new Book(title, author, pages, read)
+  const newBook = new Book(title, author, pages, read);
+  booksArray.push(newBook);
+  e.preventDefault();
+  console.log(booksArray)
+  closeModal(e);
+  resetForm();
 }
 
-
-const saveBook = (e) => {
-  const submit = document.getElementById("submit");
-  console.log(e)
-  submit.onclick = getInputValue;
-}
-
-saveBook();
+submit.onclick = getInputValue;
 
 createBook(book1);
 createBook(book2);
