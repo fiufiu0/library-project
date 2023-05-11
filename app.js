@@ -34,6 +34,7 @@ const resetForm = () => {
   read.checked = false;
 }
 
+
 addBook.onclick = openModal;
 modalBackground.onclick = closeModal;
 
@@ -63,7 +64,6 @@ const createBook = (book) => {
 
 };
 
-
 const getInputValue = (e) => {
   const title = document.getElementById("title").value
   const author = document.getElementById("author").value
@@ -76,13 +76,18 @@ const getInputValue = (e) => {
   console.log(booksArray)
   closeModal();
   resetForm();
+  showBooks();
 }
+
+const showBooks = () => {
+  for (const book of booksArray) {
+    console.log(book)
+    console.log(booksArray)
+    createBook(book)
+  }
+}
+
 
 submit.onclick = getInputValue;
 
 createBook(book1);
-createBook(book2);
-createBook(book3);
-createBook(book1);
-createBook(book2);
-createBook(book3);
