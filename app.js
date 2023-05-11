@@ -13,10 +13,6 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
-let book1 = new Book("The Hobbit", "J. R. R. Tolkien", 125, false);
-let book2 = new Book("Harry Potter", "JK Rowling", 521, true);
-let book3 = new Book("LOTR: Two Towers", "J. R. R. Tolkien", 333, true);
-
 const openModal = () => {
   modalBackground.classList.remove("hidden");
   modalContent.classList.remove("hidden");
@@ -25,6 +21,7 @@ const openModal = () => {
 const closeModal = () => {
   modalBackground.classList.add('hidden');
   modalContent.classList.add('hidden');
+  resetForm();
 }
 
 const resetForm = () => {
@@ -73,21 +70,17 @@ const getInputValue = (e) => {
   const newBook = new Book(title, author, pages, read);
   booksArray.push(newBook);
   e.preventDefault();
-  console.log(booksArray)
   closeModal();
   resetForm();
   showBooks();
 }
 
 const showBooks = () => {
+  books.innerHTML = "";
   for (const book of booksArray) {
-    console.log(book)
-    console.log(booksArray)
     createBook(book)
   }
 }
 
 
 submit.onclick = getInputValue;
-
-createBook(book1);
