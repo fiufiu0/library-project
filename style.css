@@ -90,6 +90,24 @@ header .container {
     font-weight: 300;
 }
 
+.booksRead {
+    font-size: 1rem;
+    border: none;
+    /* background-color: #affeba; */
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.read {
+    background-color: #affeba;
+}
+
+.notRead {
+    background-color: #f19d9d;
+}
+
 
 /* MODAL START */
 

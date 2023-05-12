@@ -28,7 +28,7 @@ const resetForm = () => {
   title.value = '';
   author.value = '';
   pages.value = '';
-  read.checked = false;
+  readCheckbox.checked = false;
 }
 
 
@@ -40,23 +40,33 @@ const createBook = (book) => {
   const title = document.createElement("p");
   const author = document.createElement("p");
   const pages = document.createElement("p");
-  const read = document.createElement("p");
+  const readBtn = document.createElement("button");
 
   booksCard.classList.add("booksCard");
   title.classList.add("booksTitle");
   author.classList.add("booksAuthor");
   pages.classList.add("booksPages");
-  read.classList.add("booksRead");
+  readBtn.classList.add("booksRead");
+
 
   title.textContent = `${book.title}`;
   author.textContent = `${book.author}`;
   pages.textContent = `Pages: ${book.pages}`;
-  read.textContent = book.read;
+
+  if(book.read === true){
+    readBtn.textContent = "Read";
+    readBtn.classList.add("read");
+  } else {
+    readBtn.textContent = "Not read";
+    readBtn.classList.add("notRead")
+  }
+
+  console.log(book)
 
   booksCard.appendChild(title);
   booksCard.appendChild(author);
   booksCard.appendChild(pages);
-  booksCard.appendChild(read);
+  booksCard.appendChild(readBtn);
   books.appendChild(booksCard);
 
 };
@@ -65,9 +75,10 @@ const getInputValue = (e) => {
   const title = document.getElementById("title").value
   const author = document.getElementById("author").value
   const pages = document.getElementById("pages").value
-  const read = document.getElementById("read").checked
+  const readCheckbox = document.getElementById("readCheckbox").checked
 
-  const newBook = new Book(title, author, pages, read);
+  const newBook = new Book(title, author, pages, readCheckbox);
+
   booksArray.push(newBook);
   e.preventDefault();
   closeModal();
@@ -84,3 +95,8 @@ const showBooks = () => {
 
 
 submit.onclick = getInputValue;
+
+const b1 = new Book("Hobbit", "JR Tolkien", 125, false);
+const b2 = new Book("Hobbit", "JR Tolkien", 125, true);
+createBook(b1);
+createBook(b2)
