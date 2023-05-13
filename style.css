@@ -90,14 +90,18 @@ header .container {
     font-weight: 300;
 }
 
-.booksRead {
+.booksRead, .booksRemove {
     font-size: 1rem;
     border: none;
-    /* background-color: #affeba; */
     margin-top: 0.5rem;
     padding: 0.5rem 1rem;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.booksRemove {
+    background-color: #ff8080;
+    margin-left: 0.5rem;
 }
 
 .read {

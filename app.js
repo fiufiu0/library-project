@@ -40,16 +40,19 @@ const createBook = (book) => {
   const author = document.createElement("p");
   const pages = document.createElement("p");
   const readBtn = document.createElement("button");
+  const removeBtn = document.createElement("button");
 
   booksCard.classList.add("booksCard");
   title.classList.add("booksTitle");
   author.classList.add("booksAuthor");
   pages.classList.add("booksPages");
   readBtn.classList.add("booksRead");
+  removeBtn.classList.add("booksRemove");
 
   title.textContent = `${book.title}`;
   author.textContent = `${book.author}`;
   pages.textContent = `Pages: ${book.pages}`;
+  removeBtn.textContent = "Remove";
 
   if (book.read === true) {
     readBtn.textContent = "Read";
@@ -68,6 +71,7 @@ const createBook = (book) => {
   booksCard.appendChild(author);
   booksCard.appendChild(pages);
   booksCard.appendChild(readBtn);
+  booksCard.appendChild(removeBtn)
   books.appendChild(booksCard);
 };
 
