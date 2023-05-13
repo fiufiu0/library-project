@@ -67,6 +67,14 @@ const createBook = (book) => {
     showBooks();
   });
 
+  removeBtn.addEventListener("click", () => {
+    const index = booksArray.indexOf(book);
+    if(index > -1){
+      booksArray.splice(index, 1);
+    }
+    showBooks();
+  })
+
   booksCard.appendChild(title);
   booksCard.appendChild(author);
   booksCard.appendChild(pages);
