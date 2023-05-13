@@ -19,18 +19,17 @@ const openModal = () => {
 };
 
 const closeModal = () => {
-  modalBackground.classList.add('hidden');
-  modalContent.classList.add('hidden');
+  modalBackground.classList.add("hidden");
+  modalContent.classList.add("hidden");
   resetForm();
-}
+};
 
 const resetForm = () => {
-  title.value = '';
-  author.value = '';
-  pages.value = '';
+  title.value = "";
+  author.value = "";
+  pages.value = "";
   readCheckbox.checked = false;
-}
-
+};
 
 addBook.onclick = openModal;
 modalBackground.onclick = closeModal;
@@ -48,34 +47,35 @@ const createBook = (book) => {
   pages.classList.add("booksPages");
   readBtn.classList.add("booksRead");
 
-
   title.textContent = `${book.title}`;
   author.textContent = `${book.author}`;
   pages.textContent = `Pages: ${book.pages}`;
 
-  if(book.read === true){
+  if (book.read === true) {
     readBtn.textContent = "Read";
     readBtn.classList.add("read");
   } else {
     readBtn.textContent = "Not read";
-    readBtn.classList.add("notRead")
+    readBtn.classList.add("notRead");
   }
 
-  console.log(book)
+  readBtn.addEventListener("click", () => {
+    book.read = !book.read;
+    showBooks();
+  });
 
   booksCard.appendChild(title);
   booksCard.appendChild(author);
   booksCard.appendChild(pages);
   booksCard.appendChild(readBtn);
   books.appendChild(booksCard);
-
 };
 
 const getInputValue = (e) => {
-  const title = document.getElementById("title").value
-  const author = document.getElementById("author").value
-  const pages = document.getElementById("pages").value
-  const readCheckbox = document.getElementById("readCheckbox").checked
+  const title = document.getElementById("title").value;
+  const author = document.getElementById("author").value;
+  const pages = document.getElementById("pages").value;
+  const readCheckbox = document.getElementById("readCheckbox").checked;
 
   const newBook = new Book(title, author, pages, readCheckbox);
 
@@ -84,19 +84,20 @@ const getInputValue = (e) => {
   closeModal();
   resetForm();
   showBooks();
-}
+};
 
 const showBooks = () => {
   books.innerHTML = "";
   for (const book of booksArray) {
-    createBook(book)
+    createBook(book);
   }
-}
-
+};
 
 submit.onclick = getInputValue;
 
-const b1 = new Book("Hobbit", "JR Tolkien", 125, false);
+const b1 = new Book("Harry", "JK Rowling", 300, false);
 const b2 = new Book("Hobbit", "JR Tolkien", 125, true);
+booksArray.push(b1);
+booksArray.push(b2);
 createBook(b1);
-createBook(b2)
+createBook(b2);
