@@ -107,8 +107,8 @@ const showBooks = () => {
 
 submit.onclick = getInputValue;
 
-const b1 = new Book("Harry", "JK Rowling", 300, false);
-const b2 = new Book("Hobbit", "JR Tolkien", 125, true);
+const b1 = new Book("Harry Potter: Deathly Hallows", "J.K. Rowling", 607, false);
+const b2 = new Book("The Hobbit", "J.R.R. Tolkien", 310, true);
 booksArray.push(b1);
 booksArray.push(b2);
 createBook(b1);

@@ -44,6 +44,7 @@ header .container {
     outline: none;
     border-radius: 3px;
     transition: all 0.1s ease-in;
+    cursor: pointer;
 }
 
 .add-btn:hover {
@@ -97,11 +98,16 @@ header .container {
     padding: 0.5rem 1rem;
     border-radius: 5px;
     cursor: pointer;
+    transition: all 0.1s ease-in;
 }
 
 .booksRemove {
-    background-color: #ff8080;
+    background-color: #b5b9c1;
     margin-left: 0.5rem;
+}
+
+.booksRead:hover, .booksRemove:hover {
+    transform: scale(1.05);
 }
 
 .read {
