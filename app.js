@@ -6,11 +6,20 @@ const submit = document.getElementById("submit");
 
 let booksArray = [];
 
-function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
+// function Book(title, author, pages, read) {
+//   this.title = title;
+//   this.author = author;
+//   this.pages = pages;
+//   this.read = read;
+// }
+
+class Book {
+  constructor(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  }
 }
 
 const openModal = () => {
@@ -69,17 +78,17 @@ const createBook = (book) => {
 
   removeBtn.addEventListener("click", () => {
     const index = booksArray.indexOf(book);
-    if(index > -1){
+    if (index > -1) {
       booksArray.splice(index, 1);
     }
     showBooks();
-  })
+  });
 
   booksCard.appendChild(title);
   booksCard.appendChild(author);
   booksCard.appendChild(pages);
   booksCard.appendChild(readBtn);
-  booksCard.appendChild(removeBtn)
+  booksCard.appendChild(removeBtn);
   books.appendChild(booksCard);
 };
 
@@ -107,7 +116,12 @@ const showBooks = () => {
 
 submit.onclick = getInputValue;
 
-const b1 = new Book("Harry Potter: Deathly Hallows", "J.K. Rowling", 607, false);
+const b1 = new Book(
+  "Harry Potter: Deathly Hallows",
+  "J.K. Rowling",
+  607,
+  false
+);
 const b2 = new Book("The Hobbit", "J.R.R. Tolkien", 310, true);
 booksArray.push(b1);
 booksArray.push(b2);
